@@ -13,6 +13,11 @@ def index(request):
 
 # @login_required(login_url="login/")
 @login_required
+def add(request):
+    return render(request, 'crud/add.html', context=None)
+
+# @login_required(login_url="login/")
+@login_required
 def create(request):
     member = Member(firstname=request.POST['firstname'], lastname=request.POST['lastname'])
     member.save()
@@ -24,6 +29,7 @@ def edit(request, id):
     members = Member.objects.get(id=id)
     context = {'members': members}
     return render(request, 'crud/edit.html', context)
+
 
 # @login_required(login_url="login/")
 @login_required
