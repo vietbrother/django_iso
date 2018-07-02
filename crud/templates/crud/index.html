@@ -30,10 +30,18 @@
                     <td>{{ member.firstname }}</td>
                     <td>{{ member.lastname }}</td>
                     <td>
-                        <center><a class="btn btn-xs btn-warning" href="edit/{{ member.id }}"><span
-                                class="glyphicon glyphicon-edit"></span> Sửa</a>
-                            <a class="btn btn-xs btn-danger" href="delete/{{ member.id }}"><span
-                                class="glyphicon glyphicon-trash"></span> Xóa</a></center>
+                        <center>
+                            <a class="btn btn-xs btn-warning" href="edit/{{ member.id }}"><span
+                                    class="glyphicon glyphicon-edit"></span> Sửa</a>
+{#                            <a class="btn btn-xs btn-danger" href="delete/{{ member.id }}"><span#}
+{#                                    class="glyphicon glyphicon-trash"></span> Xóa</a>#}
+                            <button data-id="delete/{{ member.id }}"
+                                    type="button" class="btn btn-xs btn-danger deleteDialog"
+                                    data-toggle="modal"
+                                    data-target="#confirmDialog">
+                                <span class="glyphicon glyphicon-trash"></span> Xóa
+                            </button>
+                        </center>
                     </td>
                 </tr>
             {% empty %}
@@ -63,10 +71,10 @@
                     "lengthMenu": "Hiển thị _MENU_ bản ghi",
                     "info": "Trang _PAGE_/_PAGES_",
                     "paginate": {
-                        "previous": "Tr.trước",
-                        "next": "Tr.sau",
-                        "last": "Tr.cuối",
-                        "first": "Tr.đầu"
+                        "previous": "&#60;",
+                        "next": "&#62;",
+                        "last": "&#62;&#62;",
+                        "first": '&#60;&#60;'
                     }
 
                 },
