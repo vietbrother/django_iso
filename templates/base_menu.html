@@ -69,6 +69,11 @@
         <!-- Custom Fonts -->
         <link href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
+
+        <link href="{% static 'css/jstree/themes/default/style.min.css' %}" rel="stylesheet" type="text/css">
+
+        <link href="{% static 'css/custom-style.css' %}" rel="stylesheet" type="text/css">
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -337,92 +342,9 @@
                         <li>
                             <a href="/crud"><i class="fa fa-table fa-fw"></i> CRUD</a>
                         </li>
-                        {#                        <li>#}
-                        {#                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>#}
-                        {#                            <ul class="nav nav-second-level">#}
-                        {#                                <li>#}
-                        {#                                    <a href="flot.html">Flot Charts</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="morris.html">Morris.js Charts</a>#}
-                        {#                                </li>#}
-                        {#                            </ul>#}
-                        {#                            <!-- /.nav-second-level -->#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>#}
-                        {#                            <ul class="nav nav-second-level">#}
-                        {#                                <li>#}
-                        {#                                    <a href="panels-wells.html">Panels and Wells</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="buttons.html">Buttons</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="notifications.html">Notifications</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="typography.html">Typography</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="icons.html"> Icons</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="grid.html">Grid</a>#}
-                        {#                                </li>#}
-                        {#                            </ul>#}
-                        {#                            <!-- /.nav-second-level -->#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span#}
-                        {#                                    class="fa arrow"></span></a>#}
-                        {#                            <ul class="nav nav-second-level">#}
-                        {#                                <li>#}
-                        {#                                    <a href="#">Second Level Item</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="#">Second Level Item</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="#">Third Level <span class="fa arrow"></span></a>#}
-                        {#                                    <ul class="nav nav-third-level">#}
-                        {#                                        <li>#}
-                        {#                                            <a href="#">Third Level Item</a>#}
-                        {#                                        </li>#}
-                        {#                                        <li>#}
-                        {#                                            <a href="#">Third Level Item</a>#}
-                        {#                                        </li>#}
-                        {#                                        <li>#}
-                        {#                                            <a href="#">Third Level Item</a>#}
-                        {#                                        </li>#}
-                        {#                                        <li>#}
-                        {#                                            <a href="#">Third Level Item</a>#}
-                        {#                                        </li>#}
-                        {#                                    </ul>#}
-                        {#                                    <!-- /.nav-third-level -->#}
-                        {#                                </li>#}
-                        {#                            </ul>#}
-                        {#                            <!-- /.nav-second-level -->#}
-                        {#                        </li>#}
-                        {#                        <li>#}
-                        {#                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span#}
-                        {#                                    class="fa arrow"></span></a>#}
-                        {#                            <ul class="nav nav-second-level">#}
-                        {#                                <li>#}
-                        {#                                    <a href="blank.html">Blank Page</a>#}
-                        {#                                </li>#}
-                        {#                                <li>#}
-                        {#                                    <a href="login.html">Login Page</a>#}
-                        {#                                </li>#}
-                        {#                            </ul>#}
-                        {#                            <!-- /.nav-second-level -->#}
-                        {#                        </li>#}
+                        <li>
+                            <a href="/organization"><i class="fa fa-building-o fa-fw"></i> Quản lý tổ chức</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -474,6 +396,8 @@
         </div>
     </div>
     <script>
+        currentLocation = window.location.href;
+        currentLocationHost = window.location.host;
         $(document).on("click", ".deleteDialog", function () {
             var linkDelete = $(this).data('id');
             $(".modal-footer #btnSubmit").attr('href', linkDelete);
@@ -510,7 +434,8 @@
     <p>You must be login first</p>
     <script type="text/javascript">
         function Redirect() {
-            window.location.href = ("http://localhost:8000/login");
+            {#window.location.href = ("http://localhost:8000/login");#}
+            window.location.href = (window.location.href + "login");
         }
 
         document.write("Please wait you will be redirected in 10sec");

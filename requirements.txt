@@ -1,1 +1,5 @@
 Django==1.10
+easy_install --always-unzip django-treebeard
+easy_install --always-unzip djangorestframework
+pip install djangorestframework==3.6.3
+
